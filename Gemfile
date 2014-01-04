@@ -40,6 +40,7 @@ group :test, :development do
   gem 'valid_attribute'
   gem 'pry-rails'
   gem 'dotenv'
+  gem 'simple_form'
 end
 
 group :development do
