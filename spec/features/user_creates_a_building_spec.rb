@@ -9,6 +9,7 @@ feature 'User creates a building' do
     select('MA', from: 'State')
     fill_in "Postal Code", with: "02201"
     fill_in "Description", with: "Launch Academy's Building"
+    select('', from: 'Owner')
     click_on "Create Building"
 
     expect(page).to have_content "Street Address"

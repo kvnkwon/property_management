@@ -7,5 +7,6 @@
   <%= f.input :state, collection: Building.state_array %>
   <%= f.input :postal_code, label: "Postal Code" %>
   <%= f.input :description, as: :text %>
+  <%= f.input :owner_id, collection: Building.owners %>
   <%= f.button :submit %>
 <% end %>
