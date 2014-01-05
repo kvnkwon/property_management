@@ -16,4 +16,13 @@ describe Building do
   it { should_not have_valid(:state).when(*blanks) }
   it { should_not have_valid(:postal_code).when(*blanks) }
 
+  it "has its owner become nil after destroying owner" do
+    owner = Owner.create
+    building = Building.create
+    building.owner = owner
+    building.save
+    owner.destroy
+    expect(building.owner_id).to be_nil
+  end
+
 end
