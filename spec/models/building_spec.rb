@@ -17,12 +17,13 @@ describe Building do
   it { should_not have_valid(:postal_code).when(*blanks) }
 
   it "has its owner become nil after destroying owner" do
-    owner = Owner.create
-    building = Building.create
+    owner = Owner.create(first_name: "Mo", last_name: "Zhu", email: "mo@mo.com")
+    building = Building.create(street_address: "22 Mo Lane", city: "Boston", state: "MA", postal_code: "02100")
     building.owner = owner
     building.save
+    expect(building).to be_valid
     owner.destroy
-    expect(building.owner_id).to be_nil
+    expect(building.reload.owner).to be_nil
   end
 
 end

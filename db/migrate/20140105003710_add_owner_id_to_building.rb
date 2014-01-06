@@ -1,6 +1,6 @@
 class AddOwnerIdToBuilding < ActiveRecord::Migration
   def up
-    add_column :buildings, :owner_id, :string
+    add_column :buildings, :owner_id, :integer
   end
 
   def down

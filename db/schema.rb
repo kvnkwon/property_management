@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20140105003710) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "postal_code",    null: false
-    t.string   "owner_id"
+    t.integer  "owner_id"
   end
 
   create_table "owners", force: true do |t|
