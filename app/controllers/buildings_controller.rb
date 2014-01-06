@@ -7,9 +7,10 @@ class BuildingsController < ApplicationController
   def create
     @building = Building.new(building_params)
     if @building.save
+      flash[:notice] = 'Building was successfully saved!'
       redirect_to new_building_path
     else
-      flash.now[:error] = "Could not save building"
+      flash[:error] = "Could not save building"
       render :new
     end
   end

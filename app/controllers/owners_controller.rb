@@ -7,6 +7,7 @@ class OwnersController < ApplicationController
   def create
     @owner = Owner.new(owner_params)
     if @owner.save
+      flash[:notice] = 'Owner was successfully saved!'
       redirect_to new_owner_path
     else
       flash.now[:error] = "Could not save owner"

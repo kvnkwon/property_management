@@ -1,7 +1,3 @@
-<% if @owner.errors.any? %>
-  <%= flash[:error] %>
-<% end %>
-
 <%= simple_form_for @owner do |f| %>
   <%= f.input :first_name, label: "First Name" %>
   <%= f.input :last_name, label: "Last Name" %>
